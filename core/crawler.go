@@ -210,7 +210,8 @@ func NewCrawler(site *url.URL, cmd *cobra.Command) *Crawler {
 	outputFolder, _ := cmd.Flags().GetString("output")
 	if outputFolder != "" {
 		filename := strings.ReplaceAll(site.Hostname(), ".", "_")
-		output = NewOutput(outputFolder, filename)
+		filenameext := filename + ".json"
+		output = NewOutput(outputFolder, filenameext)
 	}
 
 	// Init Length Filter
