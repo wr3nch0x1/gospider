@@ -12,7 +12,7 @@ type Output struct {
 }
 
 func NewOutput(folder, filename string) *Output {
-	outFile := filepath.Join(folder, filename)
+	outFile := filepath.Join(folder, filename, ".json")
 	f, err := os.OpenFile(outFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, os.ModePerm)
 	if err != nil {
 		Logger.Errorf("Failed to open file to write Output: %s", err)
